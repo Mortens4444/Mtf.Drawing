@@ -1,9 +1,8 @@
-﻿using Mtf.Drawing.Interfaces;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace Mtf.Drawing.Render;
 
-public class PointPrimitive(byte x, byte y) : PrimitiveBase, IDrawingElement
+public class PointPrimitive(byte x, byte y) : PrimitiveBase
 {
     public PointF Point { get; set; } = new PointF(x, y);
 

@@ -1,8 +1,9 @@
-﻿using System.Drawing;
+﻿using Mtf.Drawing.Interfaces;
+using System.Drawing;
 
 namespace Mtf.Drawing.Geometry;
 
-public readonly record struct RectF(float X, float Y, float Width, float Height)
+public readonly record struct RectF(float X, float Y, float Width, float Height) : IShape
 {
     public PointF Center => new(X + Width / 2f, Y + Height / 2f);
 
@@ -28,5 +29,20 @@ public readonly record struct RectF(float X, float Y, float Width, float Height)
     public RectF Inflate(float delta)
     {
         return new RectF(X - delta, Y - delta, Width + delta * 2, Height + delta * 2);
+    }
+
+    IShape IShape.Move(float dx, float dy)
+    {
+        return Move(dx, dy);
+    }
+
+    public IShape Rotate(float angle)
+    {
+        throw new NotImplementedException("Use OrientedRectF instead of this class");
+    }
+
+    IShape IShape.Resize(float scale)
+    {
+        return Resize(scale);
     }
 }

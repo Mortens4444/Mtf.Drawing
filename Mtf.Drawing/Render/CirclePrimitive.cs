@@ -1,10 +1,9 @@
 ﻿using Mtf.Drawing.Geometry;
-using Mtf.Drawing.Interfaces;
 using System.Drawing;
 
 namespace Mtf.Drawing.Render;
 
-public class CirclePrimitive : PrimitiveBase, IDrawingElement
+public class CirclePrimitive : PrimitiveBase
 {
     public CircleF Geometry { get; set; }
 
@@ -16,9 +15,29 @@ public class CirclePrimitive : PrimitiveBase, IDrawingElement
 
     public void Resize(float scale) => Geometry = Geometry.Resize(scale);
 
-    public PointF Center => Geometry.Center;
+    public PointF Center
+    {
+        get
+        {
+            return Geometry.Center;
+        }
+        set
+        {
+            Geometry = Geometry with { Center = value };
+        }
+    }
 
-    public float Radius => Geometry.Radius;
+    public float Radius
+    {
+        get
+        {
+            return Geometry.Radius;
+        }
+        set
+        {
+            Geometry = Geometry with { Radius = value };
+        }
+    }
 
     public override void DrawOnGraphics(Graphics g, Color color)
     {   

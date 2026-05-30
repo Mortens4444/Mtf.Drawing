@@ -1,11 +1,11 @@
-﻿using Mtf.Drawing.Interfaces;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace Mtf.Drawing.Render;
 
-public class TextPrimitive : PrimitiveBase, IDrawingElement
+public class TextPrimitive : PrimitiveBase
 {
     public float X { get; set; }
+
     public float Y { get; set; }
 
     public string Text { get; set; }
@@ -42,9 +42,7 @@ public class TextPrimitive : PrimitiveBase, IDrawingElement
             return;
         }
 
-        var fontSize = (float)(Math.Pow(2, (int)FontType) * 5);
-
-        using var font = new Font(FontFamily.GenericSerif, fontSize);
+        using var font = new Font(FontFamily.GenericSerif, (float)FontType);
         using var brush = new SolidBrush(color);
 
         graphics.DrawString(Text, font, brush, X, Y);

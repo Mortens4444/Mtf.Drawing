@@ -2,7 +2,7 @@
 
 namespace Mtf.Drawing.Interfaces;
 
-public interface IDrawingElement
+public interface IPrimitive
 {
     void DrawOnGraphics(Graphics graphics);
 

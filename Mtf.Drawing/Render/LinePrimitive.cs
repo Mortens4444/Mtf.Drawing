@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Mtf.Drawing.Render;
 
-public class LinePrimitive : PrimitiveBase, IDrawingElement
+public class LinePrimitive : PrimitiveBase
 {
     public LineF Line { get; set; }
 

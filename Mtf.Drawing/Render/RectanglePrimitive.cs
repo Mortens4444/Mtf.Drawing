@@ -1,10 +1,9 @@
 ﻿using Mtf.Drawing.Geometry;
-using Mtf.Drawing.Interfaces;
 using System.Drawing;
 
 namespace Mtf.Drawing.Render;
 
-public class RectanglePrimitive : PrimitiveBase, IDrawingElement
+public class RectanglePrimitive : PrimitiveBase
 {
     public RectF Rect { get; set; }
 

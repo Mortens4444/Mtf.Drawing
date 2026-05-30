@@ -4,7 +4,7 @@ using System.Drawing;
 
 namespace Mtf.Drawing.Render;
 
-public class InverseRectanglePrimitive : IDrawingElement
+public class InverseRectanglePrimitive : IPrimitive
 {
     private readonly Win32ScreenSampler sampler = new();
 

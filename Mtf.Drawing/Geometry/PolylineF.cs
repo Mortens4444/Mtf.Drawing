@@ -145,4 +145,10 @@ public sealed class PolylineF : IShape
         copy.Resize(scale);
         return copy;
     }
+
+    public bool Contains(PointF point)
+    {
+        var copy = new PolylineF(Points);
+        return copy.Contains(point);
+    }
 }

@@ -1,8 +1,9 @@
-﻿using System.Drawing;
+﻿using Mtf.Drawing.Interfaces;
+using System.Drawing;
 
 namespace Mtf.Drawing.Render
 {
-    public abstract class PrimitiveBase
+    public abstract class PrimitiveBase : IPrimitive
     {
         public void DrawOnGraphics(Graphics g)
         {

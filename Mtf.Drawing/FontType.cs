@@ -2,7 +2,9 @@
 
 public enum FontType
 {
-    Tiny = 3,
-    Normal = 1,
-    Big = 2
+    Tiny = 8,
+    Normal = 12,
+    Medium = 16,
+    Big = 24,
+    Huge = 32
 }

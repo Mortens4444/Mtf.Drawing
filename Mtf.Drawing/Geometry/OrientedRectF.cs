@@ -10,7 +10,7 @@ public readonly record struct OrientedRectF(PointF Center, float Width, float He
     };
 
     /// <summary>
-    /// axis-aligned bounding box
+    /// Axis-aligned bounding box
     /// </summary>
     /// <returns></returns>
     public RectF GetAabb()
