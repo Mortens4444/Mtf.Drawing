@@ -77,4 +77,9 @@ public readonly record struct LineF(PointF A, PointF B) : IShape
     {
         return Resize(scale);
     }
+
+    public bool Contains(PointF point)
+    {
+        return Contains(point, 0.005f);
+    }
 }
