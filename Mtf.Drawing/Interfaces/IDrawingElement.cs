@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace Mtf.Drawing;
+namespace Mtf.Drawing.Interfaces;
 
 public interface IDrawingElement
 {
