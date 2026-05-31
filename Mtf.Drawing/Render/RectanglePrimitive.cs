@@ -5,7 +5,7 @@ namespace Mtf.Drawing.Render;
 
 public class RectanglePrimitive : PrimitiveBase
 {
-    public RectF Rect { get; set; }
+    public RectF Shape { get; set; }
 
     public bool Fill { get; set; }
 
@@ -16,12 +16,12 @@ public class RectanglePrimitive : PrimitiveBase
         if (Fill)
         {
             using var brush = new SolidBrush(color);
-            g?.FillRectangle(brush, Rect.X, Rect.Y, Rect.Width, Rect.Height);
+            g?.FillRectangle(brush, Shape.X, Shape.Y, Shape.Width, Shape.Height);
         }
         else
         {
             using var pen = new Pen(color, Thickness);
-            g?.DrawRectangle(pen, Rect.X, Rect.Y, Rect.Width, Rect.Height);
+            g?.DrawRectangle(pen, Shape.X, Shape.Y, Shape.Width, Shape.Height);
         }
     }
 }

@@ -5,6 +5,8 @@ namespace Mtf.Drawing.Geometry;
 
 public readonly record struct CircleF(PointF Center, float Radius) : IShape
 {
+    public CircleF(float x, float y, float radius) : this(new PointF(x, y), radius) { }
+
     public bool Contains(PointF p)
     {
         var dx = p.X - Center.X;
