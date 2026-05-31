@@ -8,6 +8,8 @@ public class LinePrimitive : PrimitiveBase
 {
     public LineF Line { get; set; }
 
+    public override IShape Shape => Line;
+
     public float Thickness { get; set; } = 1f;
 
     public override void DrawOnGraphics(Graphics g, Color color)

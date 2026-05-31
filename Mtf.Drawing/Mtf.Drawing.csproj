@@ -22,7 +22,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <FileVersion>$(Version)</FileVersion>
     <InformationalVersion>$(Version)</InformationalVersion>
@@ -37,7 +37,7 @@
     <PackageLicenseFile>.\LICENSE.txt</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Mortens4444/Mtf.Extensions.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>Circle Mortens</PackageTags>
+    <PackageTags>Circle GeometryMath Line OrientedRect Polygon Polyline Rect TextLayout Shape Primitive Mortens</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\ReadMe.md" Pack="true" PackagePath="" />

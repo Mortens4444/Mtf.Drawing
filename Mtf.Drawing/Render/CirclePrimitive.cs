@@ -1,29 +1,32 @@
 ﻿using Mtf.Drawing.Geometry;
+using Mtf.Drawing.Interfaces;
 using System.Drawing;
 
 namespace Mtf.Drawing.Render;
 
 public class CirclePrimitive : PrimitiveBase
 {
-    public CircleF Shape { get; set; }
+    public CircleF Circle { get; set; }
+
+    public override IShape Shape => Circle;
 
     public bool Fill { get; set; }
 
-    public bool Contains(PointF point) => Shape.Contains(point);
+    public bool Contains(PointF point) => Circle.Contains(point);
 
-    public void Move(float dx, float dy) => Shape = Shape.Move(dx, dy);
+    public void Move(float dx, float dy) => Circle = Circle.Move(dx, dy);
 
-    public void Resize(float scale) => Shape = Shape.Resize(scale);
+    public void Resize(float scale) => Circle = Circle.Resize(scale);
 
     public PointF Center
     {
         get
         {
-            return Shape.Center;
+            return Circle.Center;
         }
         set
         {
-            Shape = Shape with { Center = value };
+            Circle = Circle with { Center = value };
         }
     }
 
@@ -31,24 +34,24 @@ public class CirclePrimitive : PrimitiveBase
     {
         get
         {
-            return Shape.Radius;
+            return Circle.Radius;
         }
         set
         {
-            Shape = Shape with { Radius = value };
+            Circle = Circle with { Radius = value };
         }
     }
 
     public bool IsColliding(CirclePrimitive other)
     {
-        return Shape.Intersects(other.Shape);
+        return Circle.Intersects(other.Circle);
     }
 
     public override void DrawOnGraphics(Graphics g, Color color)
     {   
-        var d = Shape.Radius * 2;
-        var x = Shape.Center.X - Shape.Radius;
-        var y = Shape.Center.Y - Shape.Radius;
+        var d = Circle.Radius * 2;
+        var x = Circle.Center.X - Circle.Radius;
+        var y = Circle.Center.Y - Circle.Radius;
 
         if (Fill)
         {
