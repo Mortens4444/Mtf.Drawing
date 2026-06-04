@@ -42,6 +42,11 @@ public class CirclePrimitive : PrimitiveBase
         }
     }
 
+    public void Inflate(float delta)
+    {
+        Circle = Circle.Inflate(delta);
+    }
+
     public bool IsColliding(CirclePrimitive other)
     {
         return Circle.Intersects(other.Circle);
